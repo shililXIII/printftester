@@ -18,7 +18,7 @@ int get_size(const char *format, int *p)
 	else if (format[curr_p] == 'h')
 		si = S_SHORT;
 
-	if (size == 0)
+	if (si == 0)
 		*p = curr_p - 1;
 	else
 		*p = curr_p;

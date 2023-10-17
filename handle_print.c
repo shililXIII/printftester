@@ -16,7 +16,7 @@
 int ha_print(const char *fmt, int *ind, va_list list, char buff[],
 		int flags, int width, int prec, int si)
 {
-	int i, unknow_len = 0, printed_chars = -1;
+	int i, unknow_len = 0, pc = -1;
 
 	fmt_t fmt_types[] = {
 		{'c', print_char}, {'s', print_string},
@@ -51,5 +51,5 @@ int ha_print(const char *fmt, int *ind, va_list list, char buff[],
 		unknow_len += write(1, &fmt[*ind], 1);
 		return (unknow_len);
 	}
-	return (printed_chars);
+	return (pc);
 }

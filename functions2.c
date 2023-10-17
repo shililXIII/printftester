@@ -11,43 +11,35 @@
  * @si: Display Size specifier
  * Return: Display the Number of characters printed.
  */
-int print_pointer(va_list typ, char buff[],
-	int flags, int width, int prec, int si)
+int print_pointer(va_list types, char buff[], int flags, int width, int prec, int si)
 {
-	char extra_c = 0, padding = ' ';
-	int ind = BUFF_SIZE - 2, length = 2, padding_s = 1;
+	char extra_c = 0, padd = ' ';
+	int ind = BUFF_SIZE - 2, length = 2, padd_start = 1;
 	unsigned long num_addrs;
 	char map_to[] = "0123456789abcdef";
-	void *addrs = va_arg(typ, void *);
+	void *addrs = va_arg(types, void *);
 
 	UNUSED(width);
 	UNUSED(si);
-
 	if (addrs == NULL)
 		return (write(1, "(nil)", 5));
-
 	buff[BUFF_SIZE - 1] = '\0';
 	UNUSED(prec);
-
 	num_addrs = (unsigned long)addrs;
-	for (int i = BUFF_SIZE - 3; i > ind; i--)
+	while (num_addrs > 0)
 	{
-		buff[i] = map_to[num_addrs % 16];
+		buff[ind--] = map_to[num_addrs % 16];
 		num_addrs /= 16;
 		length++;
 	}
-
 	if ((flags & F_ZERO) && !(flags & F_MINUS))
-		padding = '0';
+		padd = '0';
 	if (flags & F_PLUS)
 		extra_c = '+', length++;
 	else if (flags & F_SPACE)
 		extra_c = ' ', length++;
-
 	ind++;
-
-	return (write_ptr(buff, ind, length,
-		width, flags, padding, extra_c, padding_s));
+	return (write_ptr(buff, ind, length, width, flags, padd, extra_c, padd_start));
 }
 
 /*** PRINT NON PRINTABLE ***/

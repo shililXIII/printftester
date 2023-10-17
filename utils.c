@@ -15,22 +15,22 @@ int printable(char c)
 
 /**
  * _hexa - Append ascci in hexa code 2 buff
- * @buffer: Arr of chars.
+ * @buff: Arr of chars.
  * @i: Index at which to start appending.
  * @ascii_code: ASSCI CODE.
  * Return: Always 3
  */
 
-int _hexa(char ascii_code, char buffer[], int i)
+int _hexa(char ascii_code, char buff[], int i)
 {
 	char map_to[] = "0123456789ABCDEF";
-
+	
 	if (ascii_code < 0)
 		ascii_code *= -1;
-	        buffer[i++] = '\\';
-	        buffer[i++] = 'x';
-	        buffer[i++] = map_to[ascii_code / 16];
-	        buffer[i] = map_to[ascii_code % 16];
+	buff[i++] = '\\';
+	buff[i++] = 'x';
+	buff[i++] = map_to[ascii_code / 16];
+	buff[i] = map_to[ascii_code % 16];
 	return (3);
 }
 

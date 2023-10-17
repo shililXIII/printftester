@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * get_width - Calc za width 4 printing
+ * g_width - Calc za width 4 printing
  * @format: formatted str in which to print the args
  * @i: List of args
  * @list: list of args.
@@ -30,6 +30,5 @@ int g_width(const char *format, int *i, va_list list)
 			break;
 	}
 	*i = curr_i - 1;
-	
 	return (width);
 }

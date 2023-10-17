@@ -26,11 +26,18 @@ int print_pointer(va_list types, char buff[], int flags, int width, int prec, in
 	buff[BUFF_SIZE - 1] = '\0';
 	UNUSED(prec);
 	num_addrs = (unsigned long)addrs;
+<<<<<<< HEAD
 	while (num_addrs > 0)
+=======
+	int i;
+	i=BUFF_SIZE -3;
+	while (i > ind)
+>>>>>>> 50c2669994138d3666dff03eef03e44164b58948
 	{
 		buff[ind--] = map_to[num_addrs % 16];
 		num_addrs /= 16;
 		length++;
+		i--;
 	}
 	if ((flags & F_ZERO) && !(flags & F_MINUS))
 		padd = '0';
@@ -39,7 +46,17 @@ int print_pointer(va_list types, char buff[], int flags, int width, int prec, in
 	else if (flags & F_SPACE)
 		extra_c = ' ', length++;
 	ind++;
+<<<<<<< HEAD
 	return (write_ptr(buff, ind, length, width, flags, padd, extra_c, padd_start));
+=======
+
+<<<<<<< HEAD
+	return (write_pointer(bu, ind, length, wi, fl, padding, extra_c, padding_s));
+=======
+	return (write_ptr(buff, ind, length,
+		width, flags, padding, extra_c, padding_s));
+>>>>>>> 337671eb86bdd6015eff57daed43e825062f5dbb
+>>>>>>> 50c2669994138d3666dff03eef03e44164b58948
 }
 
 /*** PRINT NON PRINTABLE ***/

@@ -18,14 +18,14 @@ int get_precision(const char *format, int *p, va_list per)
 
 	precision = 0;
 
-	for (c_p += 1; format[curr_p] != '\0'; c_p++)
+	for (c_p += 1; format[c_p] != '\0'; c_p++)
 	{
 		if (is_digit(format[c_p]))
 		{
 			precision *= 10;
-			precision += format[curr_p] - '0';
+			precision += format[c_p] - '0';
 		}
-		else if (format[curr_p] == '*')
+		else if (format[c_p] == '*')
 		{
 			c_p++;
 			precision = va_arg(per, int);

@@ -11,7 +11,7 @@
  * @si: Display Size specifier
  * Return: Display the Number of characters printed.
  */
-int print_pointer(va_list typ, char bu[],
+int print_pointer(va_list typ, char bu[]
 	int fl, int wi, int prec, int si)
 {
 	char extra_c = 0, padding = ' ';

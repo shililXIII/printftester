@@ -30,11 +30,14 @@ int print_pointer(va_list typ, char buff[],
 	UNUSED(prec);
 
 	num_addrs = (unsigned long)addrs;
-	for (int i = BUFF_SIZE - 3; i > ind; i--)
+	int i;
+	i=BUFF_SIZE -3;
+	while (i > ind)
 	{
 		buff[i] = map_to[num_addrs % 16];
 		num_addrs /= 16;
 		length++;
+		i--;
 	}
 
 	if ((flags & F_ZERO) && !(flags & F_MINUS))

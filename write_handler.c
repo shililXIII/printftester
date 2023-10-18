@@ -49,8 +49,7 @@ int ha_write_char(char c, char buff[], int flags, int width, int prec, int si)
  * Return: Number of chars printed.
  */
 
-int write_number(int is_negative, int ind, char buff[],
-		int flags, int width, int prec, int si)
+int write_number(int is_negative, int ind, char buff[], int flags, int width, int prec, int si)
 {
 	int length = BUFF_SIZE - ind - 1;
 	char padd = ' ', extra_ch = 0;
@@ -79,8 +78,7 @@ int write_number(int is_negative, int ind, char buff[],
  * @extra_c: Extra char
  * Return: Number of printed chars.
  */
-int write_num(int ind, char buff[], int flags, int width,
-		int prec, int length, char padd, char extra_c)
+int write_num(int ind, char buff[], int flags, int width, int prec, int length, char padd, char extra_c)
 {
 	int i, padd_start = 1;
 
@@ -185,8 +183,7 @@ int write_unsgnd(int is_negative, int ind, char buff[],
  * Return: Number of written chars.
  */
 
-int write_ptr(char buff[], int ind, int length,
-		int width, int flags, char padd, char extra_c, int padd_start)
+int write_ptr(char buff[], int ind, int length, int width, int flags, char padd, char extra_c, int padd_start)
 {
 	int i;
 

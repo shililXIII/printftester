@@ -3,6 +3,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
+
 #define UNUSED(x) (void)(x)
 #define BUFF_SIZE 1024
 
@@ -37,7 +38,7 @@ struct fmt
 
 typedef struct fmt fmt_t;
 int _printf(const char *format, ...);
-int handle_print(const char *fmt, int *i, va_list list, char buff[], int g_flags, int g_width, int prec, int si);
+int ha_print(const char *fmt, int *i, va_list list, char buff[], int g_flags, int g_width, int prec, int si);
 
 /**print chars and strings**/
 int print_char(va_list typ, char buff[], int flags, int width, int prec, int si);

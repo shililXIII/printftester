@@ -48,13 +48,13 @@ int is_digit(char c)
 }
 
 /**
- * conv_sz_nums - Casts a num to the specified size
+ * conv_sz_num - Casts a num to the specified size
  * @num: Num to be casted.
  * @size: Num indicating the type to be casted.
  * Return: Casted value of num
 */
 
-long int conv_sz_nums(long int num, int size)
+long int conv_sz_num(long int num, int size)
 {
 	if (size == S_LONG)
 		return (num);

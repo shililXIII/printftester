@@ -104,8 +104,7 @@ int flags, int width, int prec, int si)
 * @si: Size specifier
 * Return:  must be return Number of characters printed
 */
-int print_int(va_list typ, char buff[],
-int flags, int width, int prec, int si)
+int print_int(va_list typ, char buff[], int flags, int width, int prec, int si)
 {
 	int i = BUFF_SIZE - 2;
 	int is_negative = 0;
